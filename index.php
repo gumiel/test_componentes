@@ -15,10 +15,31 @@
     <!-- Bootstrap core CSS -->
     <link href="public/libs/boostrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="public/libs/datatables/css/datatables.min.css"/>
+
+    <!-- DataTable core CSS -->
     <link rel="stylesheet" type="text/css" href="public/libs/datatables/css/select.dataTables.min.css"/>
 	<link rel="stylesheet" type="text/css" href="public/libs/datatables/css/buttons.dataTables.min.css"/>
  
+    <!-- Select2 core CSS -->
+    <link href="public/libs/select2/css/select2.min.css" rel="stylesheet">
+    
+    <!-- TreeView Bootstrap code CSS -->
+    <link rel="stylesheet" href="public/libs/bootstrap-treeview/css/bootstrap-treeview.min.css" />
+    
+    <style type="text/css" media="screen">
+ 
+.btn-glyphicon { padding:8px; background:#ffffff; margin-right:4px; }
+.icon-btn { padding: 1px 15px 3px 2px; border-radius:50px;}
 
+.clickable{
+    cursor: pointer;   
+}
+
+.panel-heading span {
+    margin-top: -20px;
+    font-size: 15px;
+}
+    </style>
 
   </head>
 
@@ -44,48 +65,118 @@
         </div><!--/.nav-collapse -->
       </div>
     </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading text-left">
+                        <button type="button" class="btn btn-default btn-sm text-center" data-toggle="modal" data-target="#myModal">
+                            <i class="glyphicon glyphicon-plus"></i> <br>Crear
+                        </button>
+                        <button type="button" class="btn btn-default btn-sm text-center">
+                            <i class="glyphicon glyphicon-pencil"></i> <br>Editar
+                        </button>
+                        <button type="button" class="btn btn-default btn-sm text-center"> 
+                            <i class="glyphicon glyphicon-trash"></i> <br>Elimiar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="panel panel-primary">
-                    <div class="panel-heading">Buscador</div>
-                    <div class="panel-body">
+                    <div class="panel-heading"> 
+                        <h3 class="panel-title">Buscador</h3>
+                        <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-down"></i></span>
+
+                    </div>
+                    <div class="panel-body" class="collapse" id="collapseExample">
+                        <div class="row">
+                            <div class='col-md-6'>
+                                <div class="form-group">
+                                    <label for="nombres" class="col-md-4 control-label">Nombre:</label>
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <div class='input-group date' id='datetimepicker1'>
+                                                <input type='text' class="form-control" />
+                                                <span class="input-group-addon">
+                                                    <span class="glyphicon glyphicon-calendar"></span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class='col-md-6'>
+                                <div class="form-group">
+                                    <label for="nombres" class="col-md-4 control-label">Nombre:</label>
+                                    <div class="col-md-8">
+                                        <input type="email" class="form-control" id="nombres" name="nombres" >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                        <label for="nombres" class="col-md-4 control-label">Codigo:</label>
+                                        <div class="col-md-8">
+                                            <select name="selector" id="input" class="form-control" >
+                                                <option value="">SELECCIONE</option>
+                                                <option value="1">UNO</option>
+                                                <option value="2">DOS</option>
+                                                <option value="3">TRES</option>
+                                                <option value="4">CUATRO</option>
+                                            </select>
+                                        </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="nombres" class="col-md-4 control-label">Pais:</label>
+                                    <div class="col-md-8">
+                                        <select name="selector" id="input2" class="form-control" multiple="multiple" >
+                                            <option value="">SELECCIONE</option>
+                                            <option value="1">UNO</option>
+                                            <option value="2">DOS</option>
+                                            <option value="3">TRES</option>
+                                            <option value="4">CUATRO</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            
+                        </div>
+                    </div>
+                    <div class="panel-footer text-right">
+                        <button type="button" class="btn btn-sm btn-default">Limpiar</button>
+                        <button type="button" class="btn btn-sm btn-primary">Buscar</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="container">
-    <div class="row">
-        <div class='col-sm-6'>
-            <div class="form-group">
-                <div class='input-group date' id='datetimepicker1'>
-                    <input type='text' class="form-control" />
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                </div>
-            </div>
-        </div>
+
+
+        
     </div>
 </div>
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="panel panel-primary">
-                    <div class="panel-body text-right">
-                        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">Crear</button>
-                        <button type="button" class="btn btn-primary btn-sm">Editar</button>
-                        <button type="button" class="btn btn-primary btn-sm">Elimiar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    
 
 
     <div class="container-fluid">
@@ -278,40 +369,52 @@
 
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content ">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="myModalLabel">CREACION DE USUARIOS</h4>
                 </div>
                 <div class="modal-body">
-        
-
-                <form class="form-horizontal">
-                    <div class="form-group">
-                        <label for="nombres" class="col-sm-2 control-label">Nombre:</label>
-                        <div class="col-sm-10">
-                            <input type="email" class="form-control" id="nombres" name="nombres" placeholder="Ej. Henry">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="paterno" class="col-sm-2 control-label">Paterno:</label>
-                        <div class="col-sm-10">
-                            <input type="password" class="form-control" id="paterno" name="paterno" placeholder="Ej. Perez">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
-                            <div class="checkbox">
-                                <label>
-                                <input type="checkbox"> Soltero
-                                </label>
+                    <form class="form-horizontal">
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                <div id="treeview1" class=""></div>
                             </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+
+                                <div class="form-group">
+                                    <label for="nombres" class="col-md-4 control-label">Nombre:</label>
+                                    <div class="col-md-8">
+                                        <input type="email" class="form-control" id="nombres" name="nombres" placeholder="Ej. Henry">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="paterno" class="col-md-4 control-label">Paterno:</label>
+                                    <div class="col-md-8">
+                                        <input type="password" class="form-control" id="paterno" name="paterno" placeholder="Ej. Perez">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nacimiento" class="col-md-4 control-label">Fecha de Nacimiento:</label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" id="nacimiento" name="nacimiento">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-offset-4 col-md-8">
+                                        <div class="checkbox">
+                                            <label>
+                                            <input type="checkbox"> Soltero
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            
                         </div>
-                    </div>
-                </form>
-
-
+                    </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -326,20 +429,34 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="public/libs/jquery/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="public/libs/moment/js/moment.min.js"></script>
+
+    <!-- Bootstrap JS -->
     <script src="public/libs/boostrap/js/transition.js"></script>
     <script src="public/libs/boostrap/js/collapse.js"></script>
     <script src="public/libs/boostrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="public/libs/moment/js/moment.min.js"></script>
+
+    <!-- DatePicker Bootstrap JS -->
     <script type="text/javascript" src="public/libs/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
     
+    <!-- DataTable JS -->
     <script type="text/javascript" src="public/libs/datatables/js/datatables.min.js"></script>
     <script type="text/javascript" src="public/libs/datatables/js/dataTables.select.min.js"></script>
     <script type="text/javascript" src="public/libs/datatables/js/dataTables.buttons.min.js"></script>
     
-    <!-- Jquery validation -->
+    <!-- Jquery validation JS-->
     <script type="text/javascript" src="public/libs/jquery-validation/js/jquery.validate.min.js"></script>
 
-    <script type="text/javascript" src="public/js/index.js"></script>
+    <!-- Select2 JS -->
+    <script src="public/libs/select2/js/select2.min.js"></script>
+
+    <!-- bootstrap-treeview JS -->
+    <script src="public/libs/bootstrap-treeview/js/bootstrap-treeview.min.js"></script>
+
+    <!-- Mask JS -->
+    <script src="public/libs/mask/jquery.mask.min.js" type="text/javascript"></script>
+
+    <script src="public/js/index.js?date='<?php echo uniqid()?>'"></script>
 
   </body>
 </html>
