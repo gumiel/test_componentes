@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <link rel="icon" href="/favicon.ico">
 
-    <title>Componentes</title>
+    <title>Starter Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
     <link href="public/libs/boostrap/css/bootstrap.min.css" rel="stylesheet">
@@ -28,23 +28,11 @@
     
     <style type="text/css" media="screen">
  
-.btn-glyphicon { padding:8px; background:#ffffff; margin-right:4px; }
-.icon-btn { padding: 1px 15px 3px 2px; border-radius:50px;}
-
-.clickable{
-    cursor: pointer;   
-}
-
-.panel-heading span {
-    margin-top: -20px;
-    font-size: 15px;
-}
-
 table.dataTable tbody td.select-checkbox:before, table.dataTable tbody th.select-checkbox:before {
-    margin-top: -12px;
+	margin-top: -12px;
 }
 table.dataTable tr.selected td.select-checkbox:after, table.dataTable tr.selected th.select-checkbox:after {
-    margin-top: -15px;
+	margin-top: -15px;
 }
     </style>
 
@@ -193,10 +181,10 @@ table.dataTable tr.selected td.select-checkbox:after, table.dataTable tr.selecte
                 <div class="panel panel-primary">
                     <div class="panel-body">
                         
-                        <table id="example" class="display" style="width:100%">
+                        <table id="example" class="display responsive no-wrap" width="100%" style="width:100%">
                             <thead>
                                 <tr>
-                                    <th style="width: 50px"></th>
+                                    <th width="45">sss</th>
                                     <th>Name</th>
                                     <th>Position</th>
                                     <th>Office</th>
@@ -206,7 +194,7 @@ table.dataTable tr.selected td.select-checkbox:after, table.dataTable tr.selecte
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><span style="display:none">1</span></td>
+                                    <td data-id="1"><span style="display:none">1</span></td>
                                     <td>Tiger Nixon</td>
                                     <td>System Architect</td>
                                     <td>Edinburgh</td>
@@ -214,7 +202,7 @@ table.dataTable tr.selected td.select-checkbox:after, table.dataTable tr.selecte
                                     <td>$320,800</td>
                                 </tr>
                                 <tr>
-                                    <td><span style="display:none">2</span></td>
+                                    <td data-id="2"><span style="display:none">2</span></td>
                                     <td>Garrett Winters</td>
                                     <td>Accountant</td>
                                     <td>Tokyo</td>
@@ -222,7 +210,7 @@ table.dataTable tr.selected td.select-checkbox:after, table.dataTable tr.selecte
                                     <td>$170,750</td>
                                 </tr>
                                 <tr>
-                                    <td><span style="display:none">3</span></td>
+                                    <td data-id="3"><span style="display:none">3</span></td>
                                     <td>Ashton Cox</td>
                                     <td>Junior Technical Author</td>
                                     <td>San Francisco</td>
@@ -230,7 +218,7 @@ table.dataTable tr.selected td.select-checkbox:after, table.dataTable tr.selecte
                                     <td>$86,000</td>
                                 </tr>
                                 <tr>
-                                    <td><span style="display:none">4</span></td>
+                                    <td data-id="4"><span style="display:none">4</span></td>
                                     <td>Cedric Kelly</td>
                                     <td>Senior Javascript Developer</td>
                                     <td>Edinburgh</td>
@@ -238,7 +226,7 @@ table.dataTable tr.selected td.select-checkbox:after, table.dataTable tr.selecte
                                     <td>$433,060</td>
                                 </tr>
                                 <tr>
-                                    <td></td>
+                                    <td><span style="display:none">5</span></td>
                                     <td>Airi Satou</td>
                                     <td>Accountant</td>
                                     <td>Tokyo</td>
@@ -367,8 +355,6 @@ table.dataTable tr.selected td.select-checkbox:after, table.dataTable tr.selecte
             </div>
         </div>
 
-    
-
     </div><!-- /.container -->
 
 
@@ -385,10 +371,10 @@ table.dataTable tr.selected td.select-checkbox:after, table.dataTable tr.selecte
                 <div class="modal-body">
                     <form class="form-horizontal">
                         <div class="row">
-                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                                 <div id="treeview1" class=""></div>
                             </div>
-                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 
                                 <div class="form-group">
                                     <label for="nombres" class="col-md-4 control-label">Nombre:</label>
@@ -458,7 +444,6 @@ table.dataTable tr.selected td.select-checkbox:after, table.dataTable tr.selecte
     <script type="text/javascript" src="public/libs/datatables/exports/vfs_fonts.js"></script>
     <script type="text/javascript" src="public/libs/datatables/exports/buttons.html5.min.js"></script>
     <script type="text/javascript" src="public/libs/datatables/exports/buttons.print.min.js"></script>
-    <script type="text/javascript" src="public/js/CDatatable.js"></script>
     
     <!-- Jquery validation JS-->
     <script type="text/javascript" src="public/libs/jquery-validation/js/jquery.validate.min.js"></script>
@@ -472,7 +457,7 @@ table.dataTable tr.selected td.select-checkbox:after, table.dataTable tr.selecte
     <!-- Mask JS -->
     <script src="public/libs/mask/jquery.mask.min.js" type="text/javascript"></script>
 
-    <script src="public/js/index.js?date='<?php echo uniqid()?>'"></script>
+    <script src="public/js/datatable.js?date='<?php echo uniqid()?>'"></script>
 
   </body>
 </html>

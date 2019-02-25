@@ -1,68 +1,70 @@
 
-function DataTableCI(element)
-{
-	this.element = element;
-	this.table;
+// function DataTableCI(element)
+// {
+// 	this.element = element;
+// 	this.table;
 	
-	var config = {
-    	language: {
-        "decimal": "",
-        "emptyTable": "No hay información",
-        "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
-        "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
-        "infoFiltered": "(Filtrado de _MAX_ total entradas)",
-        "infoPostFix": "",
-        "thousands": ",",
-        "lengthMenu": "Mostrar _MENU_ Entradas",
-        "loadingRecords": "Cargando...",
-        "processing": "Procesando...",
-        "search": "Buscar:",
-        "zeroRecords": "Sin resultados encontrados",
-        "paginate": {
-	            "first": "Primero",
-	            "last": "Ultimo",
-	            "next": "Siguiente",
-	            "previous": "Anterior"
-	        }
-	    },
-	    rowReorder: true
-    };
+// 	var config = {
+//     	language: {
+//         "decimal": "",
+//         "emptyTable": "No hay información",
+//         "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+//         "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+//         "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+//         "infoPostFix": "",
+//         "thousands": ",",
+//         "lengthMenu": "Mostrar _MENU_ Entradas",
+//         "loadingRecords": "Cargando...",
+//         "processing": "Procesando...",
+//         "search": "Buscar:",
+//         "zeroRecords": "Sin resultados encontrados",
+//         "paginate": {
+// 	            "first": "Primero",
+// 	            "last": "Ultimo",
+// 	            "next": "Siguiente",
+// 	            "previous": "Anterior"
+// 	        }
+// 	    },
+// 	    rowReorder: true
+//     };
 
-    this.simple = function ()
-    {
-    	this.buildCheckboxs();
-    	this.table = $(this.element).DataTable(config);
-    	this.table.rows( { selected: true } ).data();
-    }
+//     this.simple = function ()
+//     {
+//     	this.buildCheckboxs();
+//     	this.table = $(this.element).DataTable(config);
+//     	this.table.rows( { selected: true } ).data();
+//     }
 
-    this.buildCheckboxs = function ()
-    {
-    	$(this.element).find('[data-type~="checkbox"]').each(function(index, el) {
-    		var id = $(el).data('id');
-    		$(el).html('<input type="checkbox" name="data[]" value="'+id+'" />')
-    	});
-    }
+//     this.buildCheckboxs = function ()
+//     {
+//     	$(this.element).find('[data-type~="checkbox"]').each(function(index, el) {
+//     		var id = $(el).data('id');
+//     		$(el).html('<input type="checkbox" name="data[]" value="'+id+'" />')
+//     	});
+//     }
 
-    this.simpleSelect = function()
-    {
+//     this.simpleSelect = function()
+//     {
 
-    }
-
-
-
-
-}
+//     }
 
 
 
 
-var dataTablaExample = new DataTableCI('#example');
-console.log(dataTablaExample.element);
+// }
 
 
+
+
+// var dataTablaExample = new DataTableCI('#example');
+// console.log(dataTablaExample.element);
+
+var dtEjemplo = new CDataTable('#example');
 
 
 $(document).ready(function() {
+
+    dtEjemplo.simpleExports();
 
     $(document).on('click', '.panel-heading span.clickable', function(e){
         var $this = $(this);
@@ -77,7 +79,7 @@ $(document).ready(function() {
             $this.find('i').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
             
         }
-    })
+    });
 
     $('#nacimiento').mask("00/00/0000", {placeholder: "__/__/____"});
 
@@ -144,7 +146,7 @@ $(document).ready(function() {
     $('#input2').select2();
     // dataTablaExample.simple();
     var events = $('#events');
-    var table = $('#example').DataTable( {
+    // var table = $('#example').DataTable( {
         // columnDefs: [ {
         //     orderable: false,
         //     className: 'select-checkbox',
@@ -166,7 +168,7 @@ $(document).ready(function() {
         //     }
         // ],
         // dom: 'Bfrtip',
-    } );
+    // } ); 
 
     // table.on( 'selectItems', function ( e, dt, items ) {
     //     console.log( 'Items to be selected are now: ', items );
