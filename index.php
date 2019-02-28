@@ -367,8 +367,6 @@ table.dataTable tr.selected td.select-checkbox:after, table.dataTable tr.selecte
             </div>
         </div>
 
-    
-
     </div><!-- /.container -->
 
 
@@ -473,6 +471,7 @@ table.dataTable tr.selected td.select-checkbox:after, table.dataTable tr.selecte
     <script src="public/libs/mask/jquery.mask.min.js" type="text/javascript"></script>
 
     <script src="public/js/index.js?date='<?php echo uniqid()?>'"></script>
+    <script src="public/js/data.js?date='<?php echo uniqid()?>'"></script>
 
   </body>
 </html>

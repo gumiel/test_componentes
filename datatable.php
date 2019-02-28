@@ -355,6 +355,37 @@ table.dataTable tr.selected td.select-checkbox:after, table.dataTable tr.selecte
             </div>
         </div>
 
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="panel panel-primary">
+                    <div class="panel-body">
+                        <table id="example2" class="display" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Position</th>
+                                    <th>Office</th>
+                                    <th>Extn.</th>
+                                    <th>Start date</th>
+                                    <th>Salary</th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Position</th>
+                                    <th>Office</th>
+                                    <th>Extn.</th>
+                                    <th>Start date</th>
+                                    <th>Salary</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div> 
+
     </div><!-- /.container -->
 
 
@@ -458,6 +489,7 @@ table.dataTable tr.selected td.select-checkbox:after, table.dataTable tr.selecte
     <script src="public/libs/mask/jquery.mask.min.js" type="text/javascript"></script>
 
     <script src="public/js/datatable.js?date='<?php echo uniqid()?>'"></script>
+    <script src="public/js/data.js?date='<?php echo uniqid()?>'"></script>
 
   </body>
 </html>

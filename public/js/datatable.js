@@ -158,6 +158,18 @@ $(document).ready(function() {
 
  	dtEjemplo.simpleExports();
 
+    $('#example2').DataTable( {
+        "data": datos,
+        "columns": [
+            { "data": "name" },
+            { "data": "position" },
+            { "data": "office" },
+            { "data": "extn" },
+            { "data": "start_date" },
+            { "data": "salary" }
+        ]
+    } );
+
     // var events = $('#events');
     // var table = $('#example').DataTable( {
     // 	responsive: true,
