@@ -64,8 +64,6 @@ var dtEjemplo = new CDataTable('#example');
 $(document).ready(function() {
     
 
-$(document).ready(function() {
-
     dtEjemplo.simpleExports();
 
     $(document).on('click', '.panel-heading span.clickable', function(e){
