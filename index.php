@@ -376,55 +376,55 @@ table.dataTable tr.selected td.select-checkbox:after, table.dataTable tr.selecte
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content ">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">CREACION DE USUARIOS</h4>
-                </div>
-                <div class="modal-body">
-                    <form class="form-horizontal">
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                                <div id="treeview1" class=""></div>
-                            </div>
-                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <form id="formCrearUsuario" action="index_submit" method="post" class="form-horizontal">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">CREACION DE USUARIOS</h4>
+                    </div>
+                    <div class="modal-body">
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                    <div id="treeview1" class=""></div>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 
-                                <div class="form-group">
-                                    <label for="nombres" class="col-md-4 control-label">Nombre:</label>
-                                    <div class="col-md-8">
-                                        <input type="email" class="form-control" id="nombres" name="nombres" placeholder="Ej. Henry">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="paterno" class="col-md-4 control-label">Paterno:</label>
-                                    <div class="col-md-8">
-                                        <input type="password" class="form-control" id="paterno" name="paterno" placeholder="Ej. Perez">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="nacimiento" class="col-md-4 control-label">Fecha de Nacimiento:</label>
-                                    <div class="col-md-8">
-                                        <input type="text" class="form-control" id="nacimiento" name="nacimiento">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-md-offset-4 col-md-8">
-                                        <div class="checkbox">
-                                            <label>
-                                            <input type="checkbox"> Soltero
-                                            </label>
+                                    <div class="form-group">
+                                        <label for="nombres" class="col-md-4 control-label">Nombre:</label>
+                                        <div class="col-md-8">
+                                            <input type="email" class="form-control" id="nombres" name="nombres" placeholder="Ej. Henry">
                                         </div>
                                     </div>
-                                </div>
+                                    <div class="form-group">
+                                        <label for="paterno" class="col-md-4 control-label">Paterno:</label>
+                                        <div class="col-md-8">
+                                            <input type="password" class="form-control" id="paterno" name="paterno" placeholder="Ej. Perez">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="nacimiento" class="col-md-4 control-label">Fecha de Nacimiento:</label>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control" id="nacimiento" name="nacimiento">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-offset-4 col-md-8">
+                                            <div class="checkbox">
+                                                <label>
+                                                <input type="checkbox"> Soltero
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
 
+                                </div>
+                                
                             </div>
-                            
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -460,6 +460,7 @@ table.dataTable tr.selected td.select-checkbox:after, table.dataTable tr.selecte
     
     <!-- Jquery validation JS-->
     <script type="text/javascript" src="public/libs/jquery-validation/js/jquery.validate.min.js"></script>
+    <script src="public/js/configurations.jquery.validate.js?date='<?php echo uniqid()?>'"></script>
 
     <!-- Select2 JS -->
     <script src="public/libs/select2/js/select2.min.js"></script>

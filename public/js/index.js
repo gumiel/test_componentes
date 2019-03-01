@@ -61,6 +61,8 @@
 
 var dtEjemplo = new CDataTable('#example');
 
+$(document).ready(function() {
+    
 
 $(document).ready(function() {
 
@@ -182,9 +184,15 @@ $(document).ready(function() {
     //     }
     // } );
 
+
+
+
+
     // $('#datetimepicker1').datetimepicker();
+
     
-    $("#signupForm").validate({
+ 
+    var valFormCrearUsuario = $("#formCrearUsuario").validate({
         rules: {
             "nombres": {
                 required: true,
@@ -194,19 +202,18 @@ $(document).ready(function() {
                 required: true,
                 minlength: 5
             },
-        },
-        messages: {
-            "nombres": {
-                required: "Please enter a username",
-                minlength: "Your username must consist of at least 2 characters"
-            },
-            "paterno": {
-                required: "Please provide a password",
-                minlength: "Your password must be at least 5 characters long"
-            },
         }
     });
 
+    valifda
+
+    $( "#formCrearUsuario" ).submit(function( event ) {
+        alert( "Handler for .submit() called." );
+        event.preventDefault();
+    });
+
+    
+    form.valid()
     
 
-} );
+});
