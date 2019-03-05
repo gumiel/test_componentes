@@ -35,7 +35,7 @@ botonera._init = function()
     });
 
     self.ele.find('#btnEditar').click(function(event){
-        console.log(tblUsuarios.getIds());        
+        modalEditar.llenarModal(tblUsuarios.getIds()[0]);      
     });
 
 }
@@ -138,19 +138,18 @@ modalCrear.validacion = function()
 /**
  * 
  */
-modalEditar._openModal = function(){
-
-    var data = "";
-    var url = 'http://localhost/codeigniter_custom_github/index.php/usuario/listaAjax';
+modalEditar.llenarModal = function(id)
+{
+    var data = { "usuario[id_usuario]": id };
+    var url = 'http://localhost/codeigniter_custom_github/index.php/usuario/getUsuarioAjax';
 
     CallRest.post(url, data, function(res)
     {
         if(res.result==1)
         {
-            console.log(res.usuarios);
+            console.log(res.usuario);
         }
     });
-    
 }
 
 
