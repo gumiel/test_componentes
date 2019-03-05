@@ -1,4 +1,4 @@
-var dtEjemplo  = new CDataTable('#example');
+var tblUsuarios  = new CDataTable('#tblUsuarios');
 
 var tablas     = new ContainerJS("#tablas");
 var botonera   = new ContainerJS("#botonera");
@@ -35,7 +35,7 @@ botonera._init = function()
     });
 
     self.ele.find('#btnEditar').click(function(event){
-        console.log(dtEjemplo.getIds());        
+        console.log(tblUsuarios.getIds());        
     });
 
 }
@@ -173,6 +173,7 @@ modalEditar._openModal = function(){
  */
 tablas._init = function()
 {
+    var self = this;
     var data = "";
     var url = 'http://localhost/codeigniter_custom_github/index.php/usuario/listaAjax';
 
@@ -180,11 +181,22 @@ tablas._init = function()
     {
         if(res.result==1)
         {
-            console.log(res.usuarios);
+            $.each(res.usuarios, function(index, val) {
+                var row = "";
+                row += "<tr>";
+                row += "    <td><span style='display:none'>"+val.id_usuario+"</span></td>";
+                row += "    <td>"+val.nombres+" "+val.paterno+" "+val.materno+"</td>";
+                row += "    <td>"+val.cuenta+"</td>";
+                row += "    <td>"+val.email+"</td>";
+                row += "    <td>"+val.ci+"</td>";
+                row += "    <td>$320,800</td>";
+                row += "</tr>";
+                self.ele.find("#tblUsuarios tbody").append(row);
+            });
+            tblUsuarios.simpleSelectExport();    
         }
     });
     
-    dtEjemplo.simpleSelectExport();    
 }
 
 

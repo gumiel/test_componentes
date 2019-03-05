@@ -42,3 +42,19 @@ jQuery.validator.addMethod("sinCaracteresEspeciales",
            },
    "Nada de caracteres especiales, por favor"
 );
+
+
+
+
+
+
+(function($) {
+	$.fn.submitValidation = function(callback){
+		$(this).submit(function( event ) {        
+			var res = false;
+	        event.preventDefault();		        
+	        res = ($(this).valid())? true: false;		        
+			return callback(res);				
+	    });
+	}
+})(jQuery);

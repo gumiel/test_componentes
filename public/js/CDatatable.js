@@ -28,8 +28,8 @@ function CDataTable(element)
 	    rowReorder: true
     };
 
-    var configSelect = {
-    	responsive: true,
+    var configSelectMultiple = {
+        responsive: true,
         colReorder: true,
         columnDefs: [ {
             orderable: false,
@@ -41,6 +41,19 @@ function CDataTable(element)
             selector: 'td:first-child'
         },
         order: [[ 1, 'asc' ]],
+    };
+
+    var configSelectSimple = {
+    	columnDefs: [ {
+            orderable: false,
+            className: 'select-checkbox',
+            targets:   0
+        } ],
+        select: {
+            style:    'os',
+            selector: 'td:first-child'
+        },
+        order: [[ 1, 'asc' ]]
 	};
 
 	var configExports = {
@@ -79,7 +92,6 @@ function CDataTable(element)
 
     this.simple = function ()
     {
-    	// this.buildCheckboxs();
     	this.table = $(this.element).DataTable(configIni);
     	this.table.rows( { selected: true } ).data();
     };
@@ -87,15 +99,35 @@ function CDataTable(element)
     this.simpleSelect = function()
     {
     	this.buildCheckboxs();
-    	var config = Object.assign(configSelect, configIni);
+    	var config = Object.assign(configSelectSimple, configIni);
     	this.table = $(this.element).DataTable(config);
-    	this.table.rows( { selected: true } ).data();
+        this.accumulated();
+        this.table.rows( { selected: true } ).data();
     };
 
-    this.simpleExports = function()
+    this.simpleSelectExport = function()
+    {
+        this.buildCheckboxs();
+        var config1 = Object.assign(configSelectSimple, configIni);
+        var config = Object.assign(configExports, config1);
+        this.table = $(this.element).DataTable(config);
+        this.accumulated();
+        this.table.rows( { selected: true } ).data();
+    };
+
+    this.multiSelect = function()
+    {
+        this.buildCheckboxs();
+        var config1 = Object.assign(configSelectMultiple, configIni);
+        this.table = $(this.element).DataTable(config1);
+        this.accumulated();
+        this.table.rows( { selected: true } ).data();
+    };
+
+    this.multiSelectExport = function()
     {
     	this.buildCheckboxs();
-    	var config1 = Object.assign(configSelect, configIni);
+    	var config1 = Object.assign(configSelectMultiple, configIni);
     	var config = Object.assign(configExports, config1);
     	this.table = $(this.element).DataTable(config);
         this.accumulated();

@@ -118,171 +118,27 @@
                 <div class="panel panel-primary">
                     <div class="panel-body">
                         
-                        <table id="example" class="display" style="width:100%">
+                        <table id="tblUsuarios" class="display" style="width:100%">
                             <thead>
                                 <tr>
                                     <th style="width: 50px"></th>
-                                    <th>Name</th>
-                                    <th>Position</th>
-                                    <th>Office</th>
-                                    <th>Age</th>
-                                    <th>Salary</th>
+                                    <th>NOMBRES Y APELLIDOS</th>
+                                    <th>CUENTA</th>
+                                    <th>CORREO ELECTRONICO</th>
+                                    <th>CI</th>
+                                    <th>SALARIO</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td><span style="display:none">1</span></td>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>$320,800</td>
-                                </tr>
-                                <tr>
-                                    <td><span style="display:none">2</span></td>
-                                    <td>Garrett Winters</td>
-                                    <td>Accountant</td>
-                                    <td>Tokyo</td>
-                                    <td>63</td>
-                                    <td>$170,750</td>
-                                </tr>
-                                <tr>
-                                    <td><span style="display:none">3</span></td>
-                                    <td>Ashton Cox</td>
-                                    <td>Junior Technical Author</td>
-                                    <td>San Francisco</td>
-                                    <td>66</td>
-                                    <td>$86,000</td>
-                                </tr>
-                                <tr>
-                                    <td><span style="display:none">4</span></td>
-                                    <td>Cedric Kelly</td>
-                                    <td>Senior Javascript Developer</td>
-                                    <td>Edinburgh</td>
-                                    <td>22</td>
-                                    <td>$433,060</td>
-                                </tr>
-                                <tr>
-                                    <td><span style="display:none">5</span></td>
-                                    <td>Airi Satou</td>
-                                    <td>Accountant</td>
-                                    <td>Tokyo</td>
-                                    <td>33</td>
-                                    <td>$162,700</td>
-                                </tr>
-                                <tr>
-                                    <td><span style="display:none">6</span></td>
-                                    <td>Brielle Williamson</td>
-                                    <td>Integration Specialist</td>
-                                    <td>New York</td>
-                                    <td>61</td>
-                                    <td>$372,000</td>
-                                </tr>
-                                <tr>
-                                    <td><span style="display:none">7</span></td>
-                                    <td>Herrod Chandler</td>
-                                    <td>Sales Assistant</td>
-                                    <td>San Francisco</td>
-                                    <td>59</td>
-                                    <td>$137,500</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Rhona Davidson</td>
-                                    <td>Integration Specialist</td>
-                                    <td>Tokyo</td>
-                                    <td>55</td>
-                                    <td>$327,900</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Colleen Hurst</td>
-                                    <td>Javascript Developer</td>
-                                    <td>San Francisco</td>
-                                    <td>39</td>
-                                    <td>$205,500</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Sonya Frost</td>
-                                    <td>Software Engineer</td>
-                                    <td>Edinburgh</td>
-                                    <td>23</td>
-                                    <td>$103,600</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Jena Gaines</td>
-                                    <td>Office Manager</td>
-                                    <td>London</td>
-                                    <td>30</td>
-                                    <td>$90,560</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Quinn Flynn</td>
-                                    <td>Support Lead</td>
-                                    <td>Edinburgh</td>
-                                    <td>22</td>
-                                    <td>$342,000</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Charde Marshall</td>
-                                    <td>Regional Director</td>
-                                    <td>San Francisco</td>
-                                    <td>36</td>
-                                    <td>$470,600</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Haley Kennedy</td>
-                                    <td>Senior Marketing Designer</td>
-                                    <td>London</td>
-                                    <td>43</td>
-                                    <td>$313,500</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Tatyana Fitzpatrick</td>
-                                    <td>Regional Director</td>
-                                    <td>London</td>
-                                    <td>19</td>
-                                    <td>$385,750</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Michael Silva</td>
-                                    <td>Marketing Designer</td>
-                                    <td>London</td>
-                                    <td>66</td>
-                                    <td>$198,500</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Paul Byrd</td>
-                                    <td>Chief Financial Officer (CFO)</td>
-                                    <td>New York</td>
-                                    <td>64</td>
-                                    <td>$725,000</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Gloria Little</td>
-                                    <td>Systems Administrator</td>
-                                    <td>New York</td>
-                                    <td>59</td>
-                                    <td>$237,500</td>
-                                </tr>
                             </tbody>
                             <tfoot>
                                 <tr>
                                     <th></th>
-                                    <th>Name</th>
-                                    <th>Position</th>
-                                    <th>Office</th>
-                                    <th>Age</th>
-                                    <th>Salary</th>
+                                    <th>NOMBRES Y APELLIDOS</th>
+                                    <th>CUENTA</th>
+                                    <th>CORREO ELECTRONICO</th>
+                                    <th>CI</th>
+                                    <th>SALARIO</th>
                                 </tr>
                             </tfoot>
                         </table>
@@ -460,5 +316,4 @@
 
 <?php require("footer.php"); ?>
 
-<script src="public/js/index.js?date='<?php echo uniqid()?>'"></script>
-<script src="public/js/data.js?date='<?php echo uniqid()?>'"></script>
+<script src="public/js/demo1.js?date='<?php echo uniqid()?>'"></script>

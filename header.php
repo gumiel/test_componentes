@@ -14,11 +14,14 @@
 
     <!-- Bootstrap core CSS -->
     <link href="public/libs/boostrap/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="public/libs/datatables/css/datatables.min.css"/>
+
+    <!-- Bootstrap DatePicker -->
+    <!-- <link rel="stylesheet" type="text/css" href="public/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css"/> -->
 
     <!-- DataTable core CSS -->
+    <link rel="stylesheet" type="text/css" href="public/libs/datatables/css/datatables.min.css"/>
     <link rel="stylesheet" type="text/css" href="public/libs/datatables/css/select.dataTables.min.css"/>
-	<link rel="stylesheet" type="text/css" href="public/libs/datatables/css/buttons.dataTables.min.css"/>
+	  <link rel="stylesheet" type="text/css" href="public/libs/datatables/css/buttons.dataTables.min.css"/>
  
     <!-- Select2 core CSS -->
     <link href="public/libs/select2/css/select2.min.css" rel="stylesheet">

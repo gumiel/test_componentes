@@ -2,7 +2,8 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="public/libs/jquery/jquery-3.3.1.min.js"></script>
+    <!-- <script src="public/libs/jquery/jquery-3.3.1.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script type="text/javascript" src="public/libs/moment/js/moment.min.js"></script>
 
     <!-- Bootstrap JS -->
@@ -12,6 +13,9 @@
 
     <!-- DatePicker Bootstrap JS -->
     <script type="text/javascript" src="public/libs/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+    <script>  $('#datetimepicker1').datetimepicker();  </script>
+    <!-- <script type="text/javascript" src="public/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script> -->
+    
     
     <!-- DataTable JS -->
     <script type="text/javascript" src="public/libs/datatables/js/datatables.min.js"></script>
@@ -40,8 +44,15 @@
     <!-- Mask JS -->
     <script src="public/libs/mask/jquery.mask.min.js" type="text/javascript"></script>
 
-    <script src="public/js/index.js?date='<?php echo uniqid()?>'"></script>
-    <script src="public/js/data.js?date='<?php echo uniqid()?>'"></script>
+    <!-- Mask JS -->
+    <script src="public/libs/serializejson/js/jquery.serializejson.min.js" type="text/javascript"></script>
+
+    <!-- Configurations -->
+    <script src="public/js/ContainerJS.js" type="text/javascript"></script>
+    <script src="public/js/CallRest.js" type="text/javascript"></script>
+
+
+    
 
   </body>
 </html>
