@@ -51,7 +51,8 @@
     <script src="public/js/ContainerJS.js" type="text/javascript"></script>
     <script src="public/js/CallRest.js" type="text/javascript"></script>
 
-
+    <!-- RequireJs -->
+    <script src="public/libs/requirejs/js/require.js" type="text/javascript"></script>
     
 
   </body>

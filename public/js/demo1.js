@@ -1,10 +1,12 @@
+require(["public/js/r.js"])
+
 var tblUsuarios  = new CDataTable('#tblUsuarios');
 
-var tablas     = new ContainerJS("#tablas");
-var botonera   = new ContainerJS("#botonera");
-var modalCrear = new ContainerJS("#modalCrear");
+var tablas      = new ContainerJS("#tablas");
+var botonera    = new ContainerJS("#botonera");
+var modalCrear  = new ContainerJS("#modalCrear");
 var modalEditar = new ContainerJS("#modalEditar");
-var buscador   = new ContainerJS("#buscador");
+var buscador    = new ContainerJS("#buscador");
 
 
 
