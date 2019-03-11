@@ -96,6 +96,30 @@ function CDataTable(element)
     	this.table.rows( { selected: true } ).data();
     };
 
+    this.clean = function()
+    {
+
+        if(this.table){
+            this.table.destroy();
+            this.dataSelected   = []; 
+        }
+
+        if($(this.element).find('tbody').length>0){
+            $(this.element).find('tbody').html("");
+        }else{
+            $(this.element).html("");
+        }
+    }
+
+    this.append = function(row)
+    {
+        if($(this.element).find('tbody').length>0){
+            $(this.element).find('tbody').append(row);
+        }else{
+            $(this.element).append(row);
+        }
+    }
+
     this.simpleSelect = function()
     {
     	this.buildCheckboxs();
@@ -107,12 +131,15 @@ function CDataTable(element)
 
     this.simpleSelectExport = function()
     {
+
+        
         this.buildCheckboxs();
         var config1 = Object.assign(configSelectSimple, configIni);
         var config = Object.assign(configExports, config1);
         this.table = $(this.element).DataTable(config);
         this.accumulated();
         this.table.rows( { selected: true } ).data();
+        // this.table.clear().draw();
     };
 
     this.multiSelect = function()

@@ -14,6 +14,12 @@
                         <button type="button" class="btn btn-default btn-sm text-center"> 
                             <i class="glyphicon glyphicon-trash"></i> <br>Elimiar
                         </button>
+                        <button type="button" class="btn btn-default btn-sm text-center" id="btnActualizarTabla"> 
+                            <i class="glyphicon glyphicon-repeat"></i> <br>Actualizar Tabla
+                        </button>
+                        <button type="button" class="btn btn-default btn-sm text-center" id="btnAsignarRoal"> 
+                            <i class="glyphicon glyphicon-thumbs-up"></i> <br>Asignar Rol
+                        </button>
                     </div>
                 </div>
             </div>
@@ -162,89 +168,57 @@
                     </div>
                     <div class="modal-body">
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <div class="form-group">
-                                        <label class="col-md-4 control-label">NOMBRES:</label>
+                                        <label class="col-md-4 control-label">Nombres:</label>
                                         <div class="col-md-8">
-                                            <input type="text" class="form-control"  name="nombres">
+                                            <input type="text" class="form-control"  name="usuario[nombres]">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="paterno" class="col-md-4 control-label">APELLIDOS PATERNOS:</label>
+                                        <label class="col-md-4 control-label">Apellido Paterno:</label>
                                         <div class="col-md-8">
-                                            <input type="text" class="form-control" name="paterno">
+                                            <input type="text" class="form-control" name="usuario[paterno]">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="paterno" class="col-md-4 control-label">APELLIDOS MATERNOS:</label>
+                                        <label class="col-md-4 control-label">Apellido Materno:</label>
                                         <div class="col-md-8">
-                                            <input type="text" class="form-control" name="materno" >
+                                            <input type="text" class="form-control" name="usuario[materno]" >
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="nacimiento" class="col-md-4 control-label">FECHA DE NACIMIENTO:</label>
+                                        <label class="col-md-4 control-label">Cuenta:</label>
                                         <div class="col-md-8">
-                                            <input type="text" class="form-control"  name="nacimiento">
+                                            <input type="text" class="form-control"  name="usuario[cuenta]">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="nacimiento" class="col-md-4 control-label">PROFESIÓN:</label>
+                                        <label class="col-md-4 control-label">Email:</label>
                                         <div class="col-md-8">
-                                            <select class="form-control">
-                                                <option value="sistemas">Ing. Sistemas</option>
-                                                <option value="electricoo">Ing. Electrico</option>
-                                                <option value="mecanico">Ing. Mecanico</option>
-                                                <option value="informatico">Lic. Informatico</option>
-                                                <option value="economista">Lic. Economista</option>
-                                            </select>
+                                            <input type="text" class="form-control"  name="usuario[email]">
                                         </div>
                                     </div>
-                                </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">CI:</label>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control"  name="usuario[ci]">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">Contraseña:</label>
+                                        <div class="col-md-8">
+                                            <input type="password" class="form-control" id="password" name="usuario[password]">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">Repetir Contraseña:</label>
+                                        <div class="col-md-8">
+                                            <input type="password" class="form-control"  name="usuario[rep_password]">
+                                        </div>
+                                    </div>
 
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="nombres" class="col-md-4 control-label">FECHA Y HORA DE INGRESO:</label>
-                                        <div class="col-md-8">
-                                            <div class='input-group date' id='datetimepicker1'>
-                                                <input type='text' class="form-control" />
-                                                <span class="input-group-addon">
-                                                    <span class="glyphicon glyphicon-calendar"></span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="paterno" class="col-md-4 control-label">APELLIDOS PATERNOS:</label>
-                                        <div class="col-md-8">
-                                            <input type="text" class="form-control" name="paterno">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="paterno" class="col-md-4 control-label">APELLIDOS MATERNOS:</label>
-                                        <div class="col-md-8">
-                                            <input type="text" class="form-control" name="materno" >
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="nacimiento" class="col-md-4 control-label">FECHA DE NACIMIENTO:</label>
-                                        <div class="col-md-8">
-                                            <input type="text" class="form-control"  name="nacimiento">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="nacimiento" class="col-md-4 control-label">PROFESIÓN:</label>
-                                        <div class="col-md-8">
-                                            <select name="profesion" class="form-control">
-                                                <option value="sistemas">Ing. Sistemas</option>
-                                                <option value="electricoo">Ing. Electrico</option>
-                                                <option value="mecanico">Ing. Mecanico</option>
-                                                <option value="informatico">Lic. Informatico</option>
-                                                <option value="economista">Lic. Economista</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                
+                                </div>                                
                             </div>
                     </div>
                     <div class="modal-footer">
@@ -258,54 +232,111 @@
 
 
     <!-- Modal -->
-    <div class="modal fade" id="modalCrearCustom" tabindex="-1" role="dialog" >
+    <div class="modal fade" id="modalEditar" tabindex="-1" role="dialog" >
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content ">
-                <form id="formCrearUsuario" action="index_submit" method="post" class="form-horizontal">
+                <form id="formEditar" action="index_submit" method="post" class="form-horizontal">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">CREACION DE USUARIOS</h4>
+                        <h4 class="modal-title" id="myModalLabel">EDITACION DE USUARIOS</h4>
                     </div>
                     <div class="modal-body">
                             <div class="row">
-                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                    <div id="treeview1" class=""></div>
-                                </div>
-                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">Nombres:</label>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control"  name="usuario[nombres]">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">Apellido Paterno:</label>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control" name="usuario[paterno]">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">Apellido Materno:</label>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control" name="usuario[materno]" >
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">Cuenta:</label>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control"  name="usuario[cuenta]">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">Email:</label>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control"  name="usuario[email]">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">CI:</label>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control"  name="usuario[ci]">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">Contraseña:</label>
+                                        <div class="col-md-8">
+                                            <input type="password" class="form-control" id="password" name="usuario[password]">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">Repetir Contraseña:</label>
+                                        <div class="col-md-8">
+                                            <input type="password" class="form-control"  name="usuario[rep_password]">
+                                        </div>
+                                    </div>
 
-                                    <div class="form-group">
-                                        <label for="nombres" class="col-md-4 control-label">Nombre:</label>
-                                        <div class="col-md-8">
-                                            <input type="email" class="form-control"  name="nombres" placeholder="Ej. Henry">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="paterno" class="col-md-4 control-label">Paterno:</label>
-                                        <div class="col-md-8">
-                                            <input type="password" class="form-control" name="paterno" placeholder="Ej. Perez">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="nacimiento" class="col-md-4 control-label">Fecha de Nacimiento:</label>
-                                        <div class="col-md-8">
-                                            <input type="text" class="form-control"  name="nacimiento">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-md-offset-4 col-md-8">
-                                            <div class="checkbox">
-                                                <label>
-                                                <input type="checkbox"> Soltero
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                
+                                </div>                                
                             </div>
                     </div>
                     <div class="modal-footer">
+                        <input type="hidden" name="usuario[id_usuario]">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalAsignarRol" tabindex="-1" role="dialog" >
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content ">
+                <form id="formEditar" action="index_submit" method="post" class="form-horizontal">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Asignar Rol al usuario</h4>
+                    </div>
+                    <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">Roles:</label>
+                                        <div class="col-md-8">
+                                            <select name="id_rol[]" class="form-control" multiple>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                </div>                                
+                            </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="hidden" name="usuario[id_usuario]">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                         <button type="submit" class="btn btn-primary">Guardar</button>
                     </div>

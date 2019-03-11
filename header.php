@@ -29,6 +29,10 @@
     <!-- TreeView Bootstrap code CSS -->
     <link rel="stylesheet" href="public/libs/bootstrap-treeview/css/bootstrap-treeview.min.css" />
     
+    <!-- PNotify -->
+    <link rel="stylesheet" href="public/libs/pnotify/css/pnotify.custom.min.css" />
+
+    
     <style type="text/css" media="screen">
  
 .btn-glyphicon { padding:8px; background:#ffffff; margin-right:4px; }

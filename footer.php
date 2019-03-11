@@ -51,8 +51,13 @@
     <script src="public/js/ContainerJS.js" type="text/javascript"></script>
     <script src="public/js/CallRest.js" type="text/javascript"></script>
 
+    <!-- PNotify -->
+    <script src="public/libs/pnotify/js/pnotify.custom.min.js" type="text/javascript"></script>
+    <script src="public/js/Notifications.js" type="text/javascript"></script>
+
     <!-- RequireJs -->
     <script src="public/libs/requirejs/js/require.js" type="text/javascript"></script>
+
     
 
   </body>
