@@ -29,11 +29,11 @@
     <script type="text/javascript" src="public/libs/datatables/exports/vfs_fonts.js"></script>
     <script type="text/javascript" src="public/libs/datatables/exports/buttons.html5.min.js"></script>
     <script type="text/javascript" src="public/libs/datatables/exports/buttons.print.min.js"></script>
-    <script type="text/javascript" src="public/js/CDatatable.js"></script>
+    <script type="text/javascript" src="public/components/CDatatable.js"></script>
     
     <!-- Jquery validation JS-->
     <script type="text/javascript" src="public/libs/jquery-validation/js/jquery.validate.min.js"></script>
-    <script src="public/js/configurations.jquery.validate.js?date='<?php echo uniqid()?>'"></script>
+    <script src="public/configurations/configurations.jquery.validate.js?date='<?php echo uniqid()?>'"></script>
 
     <!-- Select2 JS -->
     <script src="public/libs/select2/js/select2.min.js"></script>
@@ -48,12 +48,14 @@
     <script src="public/libs/serializejson/js/jquery.serializejson.min.js" type="text/javascript"></script>
 
     <!-- Configurations -->
-    <script src="public/js/ContainerJS.js" type="text/javascript"></script>
-    <script src="public/js/CallRest.js" type="text/javascript"></script>
+
+    <!-- Componentes -->
+    <script src="public/components/ContainerJS.js" type="text/javascript"></script>
+    <script src="public/components/CallRest.js" type="text/javascript"></script>
 
     <!-- PNotify -->
     <script src="public/libs/pnotify/js/pnotify.custom.min.js" type="text/javascript"></script>
-    <script src="public/js/Notifications.js" type="text/javascript"></script>
+    <script src="public/components/Notifications.js" type="text/javascript"></script>
 
     <!-- RequireJs -->
     <script src="public/libs/requirejs/js/require.js" type="text/javascript"></script>
