@@ -379,7 +379,9 @@ $(document).ready(function() {
 
     
     
-
+    Notificacions.confirm("Desea Eliminar el Registro?", function(resul){
+        alert(resul); 
+    });
     
     // $('#datetimepicker1').datetimepicker();   
     // $('#sandbox-container .input-group.date').datepicker({

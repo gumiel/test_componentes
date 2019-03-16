@@ -47,5 +47,29 @@ var Notificacions = {
 		        desktop: true
 		    }
 		}));
+	},
+	confirm: function (message, callbackConfim){
+		bootbox.confirm({ 
+		    size: "small",
+		    message: message,
+		    callback: function(result){ /* result is a boolean; true = OK, false = Cancel*/ 
+		    	return callbackConfim(result);
+		    },
+		    buttons: {
+		        confirm: {
+		            label: 'Aceptar',
+		            className: 'btn-success'
+		        },
+		        cancel: {
+		            label: 'Cancelar',
+		            className: 'btn-danger'
+		        }
+		    },
+		})
+	}
+	alert: function(message, callbackAlert){
+		bootbox.alert(message, function(){
+		    return callbackAlert;
+		})
 	}
 }
