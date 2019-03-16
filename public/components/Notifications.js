@@ -66,10 +66,19 @@ var Notificacions = {
 		        }
 		    },
 		})
-	}
+	},
 	alert: function(message, callbackAlert){
-		bootbox.alert(message, function(){
-		    return callbackAlert;
+		bootbox.alert({
+		    size: "small",
+		    title: "Mensaje:",
+		    message: message,
+		    callback: function(){  },
+		    buttons: {
+		        ok: {
+		            label: 'Aceptar',
+		            className: 'btn-info'
+		        }
+		    },
 		})
 	}
 }
