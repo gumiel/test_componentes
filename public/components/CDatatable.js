@@ -199,5 +199,46 @@ function CDataTable(element)
         return ids;
     };
 
+    this.getData = function()
+    {
+        var self = this;
+        var ids = [];
+        this.dataSelected.forEach( function(element, index) {
+            var elements = $.parseHTML(element[0]);
+            var objectRow = [];
+            elements.forEach(function(dataElements){
+                var attribute = {};
+                var name  = $(dataElements).prop('name');
+                var value = $(dataElements).val();
+                // eval('attribute = {"'+name+'":'+value+'}');
+                if(self.isInt(value)){
+                    value = parseInt(value);
+                }
+
+                if(typeof name != 'undefined'){
+                    attribute[name] = value;
+                    objectRow = Object.assign(objectRow, attribute);
+                }
+            });
+            ids.push(objectRow);
+        });
+        return ids;
+    };
+
+    this.isInt = function (x){
+        var y = parseInt(x);
+        if (isNaN(y)) 
+            return false;
+        return x == y && x.toString() == y.toString();
+    };
+
+    this.isBoolean = function (x){
+        // Falta crear la validacion
+    };
+    
+    this.isFloat = function (x){
+        // falta crear la validacion
+    };
+
 
 }

@@ -1,7 +1,7 @@
 
 var Notificacions = {
 	success: function(message){
-		var msg = (message && message!="")? message: 'Existieron errores al procesar sus datos.';
+		var msg = (message && message!="")? message: 'Se proceso correctamente sus datos.';
 		PNotify.desktop.permission();
 	    (new PNotify({
 	        title: 'Correcto.',
@@ -25,7 +25,7 @@ var Notificacions = {
 		}));
 	},
 	warning: function(message){
-		var msg = (message && message!="")? message: 'Existieron errores al procesar sus datos.';
+		var msg = (message && message!="")? message: 'Cuidado con los datos procesados.';
 		PNotify.desktop.permission();
 		(new PNotify({
 		    title: 'Advertencia.',

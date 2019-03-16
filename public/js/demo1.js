@@ -38,7 +38,29 @@ botonera._init = function()
     });
 
     self.ele.find('#btnEditar').click(function(event){
-        modalEditar.llenarModal(tblUsuarios.getIds()[0]);      
+        var dataRow = tblUsuarios.getData()[0];
+        console.log(dataRow.id_usuario);
+        modalEditar.llenarModal(dataRow.id_usuario);      
+    });
+
+    self.ele.find('#btnEliminar').click(function(event){
+        
+        var dataRow = tblUsuarios.getData()[0];
+        
+        Notificacions.confirm("¿Desea eliminar el usuario?", function(respuesta){
+            if(respuesta){
+                var url = "http://localhost/codeigniter_custom_github/index.php/usuario/deleteUsuarioAjax"
+                var data = {"usuario[id_usuario]": dataRow.id_usuario};
+                CallRest.post(url, data, function(res){
+                    if(res.result == 1){
+                        tablas.llenarTabla();
+                        Notificacions.success();
+                    } else {
+                        Notificacions.errors();
+                    }
+                });
+            }
+        });      
     });
 
     self.ele.find('#btnActualizarTabla').click(function(event){
@@ -295,7 +317,7 @@ tablas.llenarTabla = function()
             $.each(res.usuarios, function(index, val) {
                 var row = "";
                 row += "<tr>";
-                row += "    <td><span style='display:none'>"+val.id_usuario+"</span></td>";
+                row += "    <td><input type='hidden'name='id_usuario' value='"+val.id_usuario+"' /></td>";
                 row += "    <td>"+val.nombres+" "+val.paterno+" "+val.materno+"</td>";
                 row += "    <td>"+val.cuenta+"</td>";
                 row += "    <td>"+val.email+"</td>";
@@ -377,11 +399,6 @@ $(document).ready(function() {
     modalEditar.init();
     
 
-    
-    
-    
-    Notificacions.alert("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." );
-    
     // $('#datetimepicker1').datetimepicker();   
     // $('#sandbox-container .input-group.date').datepicker({
     //     weekStart: "dsasd1223123",
@@ -397,20 +414,7 @@ $(document).ready(function() {
 
 
 
-    $(document).on('click', '.panel-heading span.clickable', function(e){
-        var $this = $(this);
-        if(!$this.hasClass('panel-collapsed')) {
-            $this.parents('.panel').find('.panel-body').slideUp();
-            $this.addClass('panel-collapsed');
-            $this.find('i').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
-            
-        } else {
-            $this.parents('.panel').find('.panel-body').slideDown();
-            $this.removeClass('panel-collapsed');
-            $this.find('i').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
-            
-        }
-    });
+    
 
     
 

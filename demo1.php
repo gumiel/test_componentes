@@ -11,7 +11,7 @@
                         <button type="button" class="btn btn-default btn-sm text-center" id="btnEditar">
                             <i class="glyphicon glyphicon-pencil"></i> <br>Editar
                         </button>
-                        <button type="button" class="btn btn-default btn-sm text-center"> 
+                        <button type="button" class="btn btn-default btn-sm text-center" id="btnEliminar"> 
                             <i class="glyphicon glyphicon-trash"></i> <br>Elimiar
                         </button>
                         <button type="button" class="btn btn-default btn-sm text-center" id="btnActualizarTabla"> 

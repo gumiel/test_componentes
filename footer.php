@@ -48,6 +48,7 @@
 
     <!-- Configurations -->
     <script src="public/configurations/config.jquery.validate.js?date='<?php echo uniqid()?>'"></script>
+    <script src="public/configurations/config.collapsed.js?date='<?php echo uniqid()?>'"></script>
 
     <!-- Componentes -->
     <script src="public/components/ContainerJS.js" type="text/javascript"></script>
