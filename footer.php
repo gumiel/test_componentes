@@ -62,9 +62,14 @@
     <!-- Bootboxx mensajes de alert prompt y confirm -->
     <script src="public/libs/bootbox/js/bootbox.min.js" type="text/javascript"></script>
     <script src="public/libs/bootbox/js/bootbox.locales.min.js" type="text/javascript"></script>
-
+    
+    <!-- Page JS -->
+    <script src="public/libs/pagejs/js/page.js" type="text/javascript"></script>
+    
     <!-- RequireJs -->
-    <!--<script src="public/libs/requirejs/js/require.js" type="text/javascript"></script>-->
+    <script src="public/libs/requirejs/js/require.js" type="text/javascript"></script>
+    
+
     
 
   </body>
