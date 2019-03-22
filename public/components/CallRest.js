@@ -4,6 +4,7 @@ var CallRest = {
 		type: '',
 		dataType: 'json',
 		data: {},
+		async: true,
 	},
 	post: function(url, data, callback){
 		
@@ -32,4 +33,4 @@ var CallRest = {
 	}  
 	
 	
-}
+};

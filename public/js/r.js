@@ -1,1 +1,1 @@
-alert("REQUIRdasE");
+console.log("REQUIRE");

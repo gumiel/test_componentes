@@ -1,10 +1,18 @@
 function CDataTable(element)
 {
+    var constructor = function (){
+        $(element).closest('.preloadContainer').find('table').css("display","none");
+        // $(element).closest('.preloadContainer').prepend('<div class="spanLoader" style="text-align:center; background: #cce8ca"><img src="public/images/rotor.gif" alt="Cargando..."> Cargando...</div>');
+    };
+    constructor();
+
+
 	this.element = element;
     this.table   = null;
 	this.dataSelected   = [];
 	
 	var configIni = {
+        responsive: true,
     	language: {
         "decimal": "",
         "emptyTable": "No hay información",
@@ -49,10 +57,7 @@ function CDataTable(element)
             className: 'select-checkbox',
             targets:   0
         } ],
-        select: {
-            style:    'os',
-            selector: 'td:first-child'
-        },
+        select: true,
         order: [[ 1, 'asc' ]]
 	};
 
@@ -98,10 +103,11 @@ function CDataTable(element)
 
     this.clean = function()
     {
+        this.dataSelected   = []; 
 
-        if(this.table){
+
+        if(this.table && $.fn.DataTable.isDataTable( this.element )){
             this.table.destroy();
-            this.dataSelected   = []; 
         }
 
         if($(this.element).find('tbody').length>0){
@@ -109,7 +115,9 @@ function CDataTable(element)
         }else{
             $(this.element).html("");
         }
-    }
+        $(this.element).closest('.preloadContainer').find('.spanLoader').css("display","block");
+        $(this.element).closest('.preloadContainer').find('table').css("display","none");
+    };
 
     this.append = function(row)
     {
@@ -118,10 +126,21 @@ function CDataTable(element)
         }else{
             $(this.element).append(row);
         }
-    }
+    };
+
+    this.html = function(tabla)
+    {
+        if($(this.element).find('tbody').length>0){
+            $(this.element).find('tbody').html(tabla);
+        }else{
+            $(this.element).html(tabla);
+        }
+    };
 
     this.simpleSelect = function()
-    {
+    {   
+        $(this.element).closest('.preloadContainer').find('table').css("display","block");
+        $(this.element).closest('.preloadContainer').find('.spanLoader').css("display","none");
     	this.buildCheckboxs();
     	var config = Object.assign(configSelectSimple, configIni);
     	this.table = $(this.element).DataTable(config);
@@ -132,7 +151,9 @@ function CDataTable(element)
     this.simpleSelectExport = function()
     {
 
-        
+        // $(this.element).closest('.preloadContainer').css("display","block");
+        $(this.element).closest('.preloadContainer').find('table').css("display","block");
+        $(this.element).closest('.preloadContainer').find('.spanLoader').css("display","none");
         this.buildCheckboxs();
         var config1 = Object.assign(configSelectSimple, configIni);
         var config = Object.assign(configExports, config1);
@@ -140,6 +161,25 @@ function CDataTable(element)
         this.accumulated();
         this.table.rows( { selected: true } ).data();
         // this.table.clear().draw();
+        // this.select();
+    };
+
+    this.OnSelect = function(callback)
+    {
+        var self = this;
+        this.table.on( 'select', function ( e, dt, type, indexes ) {
+            if ( type === 'row' ) {
+                var data = self.table.rows( indexes ).data().pluck( 'id' );
+                // alert(data);
+                var rowData = self.table.rows( indexes ).data().toArray(); 
+                var elements = $.parseHTML(rowData[0][0]);
+
+                var objectRow = [];
+                objectRow = self.convertElementsHtmlToObject(elements);
+
+                return callback(objectRow);
+            }
+        });
     };
 
     this.multiSelect = function()
@@ -175,12 +215,10 @@ function CDataTable(element)
         self.table
         .on( 'select', function ( e, dt, type, indexes ) {
             var rowData = self.table.rows( indexes ).data().toArray();
-            console.log( self.table.rows( indexes ).data() );
             self.dataSelected.push(rowData[0]);
         } )
         .on( 'deselect', function ( e, dt, type, indexes ) {
-            var rowData = self.table.rows( indexes ).data().toArray();
-            console.log(  rowData );
+            var rowData = self.table.rows( indexes ).data().toArray();            
             self.removeItemFromArr ( self.dataSelected, rowData[0] );
         } );
     };
@@ -192,37 +230,36 @@ function CDataTable(element)
 
     this.getIds = function()
     {
-        var ids = [];
-        this.dataSelected.forEach( function(element, index) {
-            ids.push($(element[0]).html());
-        });
-        return ids;
-    };
-
-    this.getData = function()
-    {
         var self = this;
         var ids = [];
         this.dataSelected.forEach( function(element, index) {
             var elements = $.parseHTML(element[0]);
             var objectRow = [];
-            elements.forEach(function(dataElements){
-                var attribute = {};
-                var name  = $(dataElements).prop('name');
-                var value = $(dataElements).val();
-                // eval('attribute = {"'+name+'":'+value+'}');
-                if(self.isInt(value)){
-                    value = parseInt(value);
-                }
-
-                if(typeof name != 'undefined'){
-                    attribute[name] = value;
-                    objectRow = Object.assign(objectRow, attribute);
-                }
-            });
+            objectRow = self.convertElementsHtmlToObject(elements);
             ids.push(objectRow);
         });
         return ids;
+    };
+
+    this.convertElementsHtmlToObject = function(elements)
+    {
+        var self = this;
+        var objectRow = [];
+        elements.forEach(function(dataElements){
+            var attribute = {};
+            var name  = $(dataElements).prop('name');
+            var value = $(dataElements).val();
+            // eval('attribute = {"'+name+'":'+value+'}');
+            if(self.isInt(value)){
+                value = parseInt(value);
+            }
+
+            if(typeof name != 'undefined'){
+                attribute[name] = value;
+                objectRow = Object.assign(objectRow, attribute);
+            }
+        });
+        return objectRow;
     };
 
     this.isInt = function (x){
@@ -239,6 +276,5 @@ function CDataTable(element)
     this.isFloat = function (x){
         // falta crear la validacion
     };
-
 
 }

@@ -2,9 +2,15 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="public/configurations/config.js"></script>
+
+
     <!-- <script src="public/libs/jquery/jquery-3.3.1.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script type="text/javascript" src="public/libs/moment/js/moment.min.js"></script>
+    <script>
+        $('.preloadContainer').prepend('<div class="spanLoader" style="text-align:center; background: #cce8ca"><img src="public/images/rotor.gif" alt="Cargando..."> Cargando...</div>');
+    </script>
 
     <!-- Bootstrap JS -->
     <script src="public/libs/boostrap/js/transition.js"></script>
@@ -18,7 +24,8 @@
     
     
     <!-- DataTable JS -->
-    <script type="text/javascript" src="public/libs/datatables/js/datatables.min.js"></script>
+    <script type="text/javascript" src="public/libs/datatables/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="public/libs/datatables/js/dataTables.bootstrap.min.js"></script>
     <script type="text/javascript" src="public/libs/datatables/js/dataTables.select.min.js"></script>
     <script type="text/javascript" src="public/libs/datatables/js/dataTables.buttons.min.js"></script>
     <script type="text/javascript" src="public/libs/datatables/responsive/dataTables.responsive.min.js"></script>
@@ -29,6 +36,9 @@
     <script type="text/javascript" src="public/libs/datatables/exports/vfs_fonts.js"></script>
     <script type="text/javascript" src="public/libs/datatables/exports/buttons.html5.min.js"></script>
     <script type="text/javascript" src="public/libs/datatables/exports/buttons.print.min.js"></script>
+    <script type="text/javascript" src="public/libs/datatables/js/dataTables.fixedHeader.min.js"></script>
+    <script type="text/javascript" src="public/libs/datatables/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="public/libs/datatables/js/responsive.bootstrap.min.js"></script>
     <script type="text/javascript" src="public/components/CDatatable.js"></script>
     
     <!-- Jquery validation JS-->
@@ -68,9 +78,32 @@
     
     <!-- RequireJs -->
     <script src="public/libs/requirejs/js/require.js" type="text/javascript"></script>
-    
 
-    
+    <script>
+        jQuery(document).ready(function($) {
+            $('a[href="#recibida"]').attr('href', Config.baseUrl()+Config.folder+"/recibida-interna.php");
+            $('a[href="#emitida"]').attr('href', Config.baseUrl()+Config.folder+"/emitida-interna.php");
+            $('a[href="#cerrarSession"]').attr('href', Config.baseUrl()+Config.folder+"/login.php");
+
+
+
+            $(document).on('click', '.panel-heading span.clickable', function(e){
+
+                var $this = $(this);
+                if(!$this.hasClass('panel-collapsed')) {
+                    $this.parents('.panel').find('.panel-body').slideUp();
+                    $this.addClass('panel-collapsed');
+                    $this.find('i').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+                    
+                } else {
+                    $this.parents('.panel').find('.panel-body').slideDown();
+                    $this.removeClass('panel-collapsed');
+                    $this.find('i').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
+                    
+                }
+            });
+        });
+    </script>
 
   </body>
 </html>
